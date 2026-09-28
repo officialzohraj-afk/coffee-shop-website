@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Z & H— Coffee Roasted With Intent</title>
+<meta name="description" content="Small-batch coffee roasted in-house. Order online or visit the roastery.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<header class="nav" id="navbar">
+  <div class="wrap nav-row">
+    <a href="#top" class="brand">Z<span>&amp;</span>H</a>
+
+    <nav class="nav-links" id="nav-links">
+      <a href="#menu">Menu</a>
+      <a href="#about">Our Story</a>
+      <a href="#picks">Popular Picks</a>
+      <a href="#footer">Visit</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="btn btn-gold" id="order-btn">Order Online</button>
+      <button class="cart-nav" id="cart-button" type="button" aria-label="Open shopping cart">
+        🛒 Cart <span id="cart-count">0</span>
+      </button>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="kicker">Crafted slowly. Served warmly.</p>
+      <h1>A better coffee<br>starts with a <em>pause.</em></h1>
+      <p class="hero-lede">Thoughtfully roasted coffee, made for slow mornings, quiet moments, and everything in between.</p>
+
+      <div class="hero-actions">
+        <a href="#menu" class="btn btn-gold">Explore Menu</a>
+        <a href="#about" class="btn btn-outline">Our Story</a>
+      </div>
+
+      <ul class="hero-badges">
+        <li>✓ Carefully sourced</li>
+        <li>＋ Freshly roasted</li>
+        <li>◷ Made to order</li>
+      </ul>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=900&q=80" alt="Latte art in a warm ceramic cup">
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-visual">
+      <img src="./image1.jpg" alt="Bag of freshly roasted coffee beans on a wooden counter">
+    </div>
+
+    <div class="about-copy">
+      <p class="kicker">About Z&amp;H</p>
+      <h2>More than<br>just a <em>coffee</em>.</h2>
+      <p>At Z&amp;H, we believe coffee is more than a drink. Every cup is crafted with care, from carefully selected beans to the final pour.</p>
+      <ul class="check-list">
+        <li>Carefully selected coffee beans</li>
+        <li>Freshly roasted for rich flavor</li>
+        <li>Crafted with care, cup by cup</li>
+        <li>Made for slow, meaningful moments</li>
+      </ul>
+      <a href="#picks" class="btn btn-outline">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<section class="picks" id="picks">
+  <div class="wrap">
+    <p class="kicker center">Our signature</p>
+    <h2 class="center">Popular Picks</h2>
+    <div class="pick-grid" id="pick-grid"></div>
+  </div>
+</section>
+
+<section class="features" id="menu">
+  <div class="wrap features-grid">
+    <div class="feature"><strong>🚚</strong><div><h4>Free Delivery</h4><p>On orders over $30</p></div></div>
+    <div class="feature"><strong>☕</strong><div><h4>Fresh &amp; Fast</h4><p>Roasted and shipped same-week</p></div></div>
+    <div class="feature"><strong>🔒</strong><div><h4>Secure Payment</h4><p>Encrypted checkout, every time</p></div></div>
+    <div class="feature"><strong>♥</strong><div><h4>Loyalty Rewards</h4><p>Earn beans with every order</p></div></div>
+  </div>
+</section>
+
+</main>
+
+<div class="toast-stack" id="toast-container"></div>
+
+<div class="cart-overlay" id="cart-overlay" aria-hidden="true">
+  <div class="cart-modal" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+    <button class="cart-close" id="cart-close" type="button" aria-label="Close cart">×</button>
+    <h2 id="cart-title">Your Cart</h2>
+
+    <div id="cart-items"></div>
+
+    <div class="cart-total-row">
+      <span>Total</span>
+      <strong id="cart-total">$0.00</strong>
+    </div>
+
+    <form id="order-form" class="customer-form">
+      <h3>Delivery Details</h3>
+      <label for="customer-name">Name</label>
+      <input id="customer-name" type="text" placeholder="Enter your name" required>
+
+      <label for="customer-address">Address</label>
+      <textarea id="customer-address" placeholder="Enter your delivery address" rows="3" required></textarea>
+
+      <button class="btn btn-gold confirm-btn" type="submit">Confirm Order</button>
+    </form>
+
+    <div class="order-success" id="order-success">
+      <div class="success-icon">✓</div>
+      <h3>Order Confirmed!</h3>
+      <p id="success-message">Thank you for your order.</p>
+      <p>Your coffee will be delivered in <strong>30–45 minutes</strong>.</p>
+      <button class="btn btn-outline" id="continue-shopping" type="button">Continue Shopping</button>
+    </div>
+  </div>
+</div>
+
+<footer class="footer" id="footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <p class="brand">Z <span>&amp;</span>H</p>
+      <p>Small-batch coffee, roasted with intent.</p>
+    </div>
+
+    <div class="footer-col">
+      <h5>Quick Links</h5>
+      <a href="#menu">Menu</a>
+      <a href="#about">Our Story</a>
+      <a href="#picks">Popular Picks</a>
+    </div>
+
+    <div class="footer-col">
+      <h5>Customer Care</h5>
+      <a href="#">Delivery Info</a>
+      <a href="#">Returns &amp; Refunds</a>
+      <a href="#">Terms &amp; Privacy</a>
+    </div>
+
+    <div class="footer-col">
+      <h5>Contact Us</h5>
+      <a href="#">42 Roastery Peshawar</a>
+      <a href="#">official.zohraj@gmail.com</a>
+      <a href="#">+92 3479244197</a>
+    </div>
+  </div>
+
+  <div class="wrap footer-bottom">
+    <span>© 2026 Z &amp; H Coffee Co.</span>
+    <div class="social">
+      <a href="#" aria-label="Instagram">Instagram</a>
+      <a href="#" aria-label="Facebook">Facebook</a>
+      <a href="#" aria-label="Twitter">Twitter</a>
+    </div>
+  </div>
+</footer>
+
+<script src="./java.js"></script>
+</body>
+</html>
